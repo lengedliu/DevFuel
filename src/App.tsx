@@ -262,6 +262,7 @@ export default function App() {
             <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-20">
               <CoffeeWidget
                 coffeePrice={profile.coffeePrice}
+                paypalHandle={profile.paypalHandle || 'zencoder'}
                 onSendCoffee={handleSendCoffee}
               />
 

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import confetti from 'canvas-confetti';
-import { Coffee, Heart, CheckCircle2, Sparkles, Lock } from 'lucide-react';
+import { Coffee, Heart, CheckCircle2, Sparkles, Lock, Wallet, CreditCard } from 'lucide-react';
+import { PayPalModal } from './PayPalModal';
 
 interface CoffeeWidgetProps {
   coffeePrice: number;
+  paypalHandle?: string;
   onSendCoffee: (data: {
     coffees: number;
     amount: number;
@@ -14,7 +16,7 @@ interface CoffeeWidgetProps {
   }) => void;
 }
 
-export const CoffeeWidget: React.FC<CoffeeWidgetProps> = ({ coffeePrice, onSendCoffee }) => {
+export const CoffeeWidget: React.FC<CoffeeWidgetProps> = ({ coffeePrice, paypalHandle = 'zencoder', onSendCoffee }) => {
   const [coffees, setCoffees] = useState<number>(3);
   const [customCoffees, setCustomCoffees] = useState<string>('');
   const [isCustom, setIsCustom] = useState<boolean>(false);
@@ -23,12 +25,19 @@ export const CoffeeWidget: React.FC<CoffeeWidgetProps> = ({ coffeePrice, onSendC
   const [message, setMessage] = useState<string>('');
   const [isAnonymous, setIsAnonymous] = useState<boolean>(false);
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+  const [paymentMethod, setPaymentMethod] = useState<'paypal' | 'card'>('paypal');
+  const [showPayPalModal, setShowPayPalModal] = useState<boolean>(false);
 
   const selectedCoffees = isCustom ? (parseInt(customCoffees, 10) || 1) : coffees;
   const totalAmount = selectedCoffees * coffeePrice;
 
   const handleSupportSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (paymentMethod === 'paypal') {
+      setShowPayPalModal(true);
+      return;
+    }
 
     // Trigger celebratory confetti
     confetti({
@@ -37,6 +46,25 @@ export const CoffeeWidget: React.FC<CoffeeWidgetProps> = ({ coffeePrice, onSendC
       origin: { y: 0.6 },
       colors: ['#F59E0B', '#10B981', '#6366F1', '#EC4899', '#3B82F6'],
     });
+
+    onSendCoffee({
+      coffees: selectedCoffees,
+      amount: totalAmount,
+      name: isAnonymous ? 'Someone' : (name.trim() || 'Generous Supporter'),
+      message: message.trim(),
+      isAnonymous,
+      isMonthly,
+    });
+
+    setIsSubmitted(true);
+    setTimeout(() => {
+      setIsSubmitted(false);
+      setMessage('');
+    }, 4000);
+  };
+
+  const handlePayPalSuccess = () => {
+    setShowPayPalModal(false);
 
     onSendCoffee({
       coffees: selectedCoffees,
@@ -214,21 +242,80 @@ export const CoffeeWidget: React.FC<CoffeeWidgetProps> = ({ coffeePrice, onSendC
             />
           </div>
 
+          {/* Payment Method Selector */}
+          <div className="space-y-1.5">
+            <label className="text-xs font-semibold text-slate-300">Payment Gateway</label>
+            <div className="grid grid-cols-2 gap-2">
+              <button
+                type="button"
+                onClick={() => setPaymentMethod('paypal')}
+                className={`py-2.5 px-3 rounded-2xl border text-xs font-bold flex items-center justify-center gap-2 transition-all ${
+                  paymentMethod === 'paypal'
+                    ? 'bg-[#0079C1]/20 border-[#0079C1] text-white shadow-md shadow-blue-500/10'
+                    : 'bg-slate-950/60 border-slate-800 text-slate-400 hover:text-white'
+                }`}
+              >
+                <Wallet className="w-4 h-4 text-[#0079C1]" />
+                <span>PayPal</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setPaymentMethod('card')}
+                className={`py-2.5 px-3 rounded-2xl border text-xs font-bold flex items-center justify-center gap-2 transition-all ${
+                  paymentMethod === 'card'
+                    ? 'bg-amber-500/20 border-amber-500 text-white shadow-md shadow-amber-500/10'
+                    : 'bg-slate-950/60 border-slate-800 text-slate-400 hover:text-white'
+                }`}
+              >
+                <CreditCard className="w-4 h-4 text-amber-400" />
+                <span>Credit Card</span>
+              </button>
+            </div>
+          </div>
+
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold text-sm shadow-xl shadow-amber-500/20 transition-all transform active:scale-[0.99] flex items-center justify-center gap-2"
+            className={`w-full py-3.5 px-6 rounded-2xl font-extrabold text-sm shadow-xl transition-all transform active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer ${
+              paymentMethod === 'paypal'
+                ? 'bg-[#0079C1] hover:bg-[#00457C] text-white shadow-blue-500/20'
+                : 'bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 shadow-amber-500/20'
+            }`}
           >
-            <Heart className="w-4 h-4 text-slate-950 fill-slate-950" />
-            <span>
-              Support ${totalAmount} {isMonthly ? '/ month' : ''} ({selectedCoffees} {selectedCoffees === 1 ? 'Coffee' : 'Coffees'})
-            </span>
+            {paymentMethod === 'paypal' ? (
+              <>
+                <Wallet className="w-4 h-4" />
+                <span>Pay ${totalAmount} with PayPal</span>
+              </>
+            ) : (
+              <>
+                <Heart className="w-4 h-4 text-slate-950 fill-slate-950" />
+                <span>
+                  Support ${totalAmount} {isMonthly ? '/ month' : ''} ({selectedCoffees} {selectedCoffees === 1 ? 'Coffee' : 'Coffees'})
+                </span>
+              </>
+            )}
           </button>
 
           <p className="text-[11px] text-center text-slate-500">
-            🔒 Instant test checkout • Instant public acknowledgement
+            🔒 Protected by {paymentMethod === 'paypal' ? 'PayPal Buyer Protection' : '256-Bit SSL Encryption'}
           </p>
         </form>
+      )}
+
+      {/* Render PayPal Modal */}
+      {showPayPalModal && (
+        <PayPalModal
+          amount={totalAmount}
+          coffees={selectedCoffees}
+          supporterName={isAnonymous ? 'Someone' : (name.trim() || 'Generous Supporter')}
+          message={message.trim()}
+          isMonthly={isMonthly}
+          isAnonymous={isAnonymous}
+          paypalHandle={paypalHandle}
+          onClose={() => setShowPayPalModal(false)}
+          onSuccess={handlePayPalSuccess}
+        />
       )}
     </div>
   );
