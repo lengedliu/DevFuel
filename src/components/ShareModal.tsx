@@ -25,9 +25,9 @@ export const ShareModal: React.FC<ShareModalProps> = ({ onClose }) => {
           <X className="w-4 h-4" />
         </button>
 
-        <h3 className="text-lg font-bold text-white">Share HaierKeys' Ko-fi Page</h3>
+        <h3 className="text-lg font-bold text-white">Share ZenCoder's DevFuel Page</h3>
         <p className="text-xs text-slate-400">
-          Spread the word and support Obsidian Fast Note Sync development!
+          Spread the word and support Obsidian VaultSync Pro development!
         </p>
 
         <div className="flex items-center gap-2 pt-2">
@@ -48,7 +48,7 @@ export const ShareModal: React.FC<ShareModalProps> = ({ onClose }) => {
 
         <div className="pt-2 flex items-center justify-center gap-3">
           <a
-            href={`https://twitter.com/intent/tweet?text=Check out HaierKeys Ko-fi creator page for Obsidian plugins!&url=${encodeURIComponent(shareUrl)}`}
+            href={`https://twitter.com/intent/tweet?text=Check out ZenCoder DevFuel creator page for Obsidian plugins!&url=${encodeURIComponent(shareUrl)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-sky-400 transition-colors"
@@ -57,7 +57,7 @@ export const ShareModal: React.FC<ShareModalProps> = ({ onClose }) => {
             <Twitter className="w-4 h-4" />
           </a>
           <a
-            href="https://github.com/haierkeys"
+            href="https://github.com/lengedliu"
             target="_blank"
             rel="noopener noreferrer"
             className="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white transition-colors"

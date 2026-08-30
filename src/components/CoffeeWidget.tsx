@@ -66,7 +66,7 @@ export const CoffeeWidget: React.FC<CoffeeWidgetProps> = ({ coffeePrice, onSendC
         </div>
         <div>
           <h2 className="text-lg font-bold text-white tracking-tight flex items-center gap-2">
-            Buy HaierKeys a Coffee
+            Buy ZenCoder a Coffee
           </h2>
           <p className="text-xs text-slate-400">
             Each coffee is ${coffeePrice} to keep sync servers & plugins running
@@ -209,7 +209,7 @@ export const CoffeeWidget: React.FC<CoffeeWidgetProps> = ({ coffeePrice, onSendC
               rows={3}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              placeholder="Leave a note or feedback for HaierKeys (e.g. Love your Fast Note Sync plugin!)..."
+              placeholder="Leave a note or feedback for ZenCoder (e.g. Love your VaultSync Pro plugin!)..."
               className="w-full px-4 py-2.5 bg-slate-950 border border-slate-800 rounded-xl text-slate-200 text-sm focus:outline-none focus:border-amber-500/50 resize-none"
             />
           </div>

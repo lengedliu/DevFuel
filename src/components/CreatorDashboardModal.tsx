@@ -103,7 +103,7 @@ export const CreatorDashboardModal: React.FC<CreatorDashboardModalProps> = ({
           </div>
           <div>
             <h2 className="text-xl font-extrabold text-white">Creator Management Dashboard</h2>
-            <p className="text-xs text-slate-400">Manage HaierKeys' goals, products, and devlog updates</p>
+            <p className="text-xs text-slate-400">Manage ZenCoder's goals, products, and devlog updates</p>
           </div>
         </div>
 
@@ -213,7 +213,7 @@ export const CreatorDashboardModal: React.FC<CreatorDashboardModalProps> = ({
                   required
                   value={shopTitle}
                   onChange={(e) => setShopTitle(e.target.value)}
-                  placeholder="e.g. Fast Note Sync Pro Key"
+                  placeholder="e.g. VaultSync Pro Key"
                   className="w-full mt-1 px-3 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs text-white"
                 />
               </div>

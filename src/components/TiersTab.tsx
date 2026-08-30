@@ -16,7 +16,7 @@ export const TiersTab: React.FC<TiersTabProps> = ({ tiers, onJoinTier }) => {
           <Sparkles className="w-3.5 h-3.5" /> Monthly Creator Memberships
         </div>
         <h2 className="text-2xl font-extrabold text-white tracking-tight">
-          Support HaierKeys & Get Exclusive Perks
+          Support ZenCoder & Get Exclusive Perks
         </h2>
         <p className="text-xs text-slate-300 leading-relaxed">
           Join a monthly tier to get early plugin beta access, high-speed sync relay node access, private Discord roles, and direct influence on development roadmap!

@@ -1,17 +1,18 @@
 import { CreatorProfile, CoffeeGoal, SupporterMessage, ShopItem, MembershipTier, DevlogPost, GalleryItem } from '../types';
+import zencoderAvatar from '../assets/images/zencoder_avatar_1788055537920.jpg';
 
 export const initialCreatorProfile: CreatorProfile = {
-  name: 'HaierKeys',
-  handle: 'haierkeys',
-  avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
+  name: 'ZenCoder',
+  handle: 'zencoder',
+  avatar: zencoderAvatar,
   coverImage: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=80',
   category: 'Obsidian & Developer Tools',
   tagline: 'Building ultra-fast Obsidian plugins, self-hosted sync services, and note-taking utilities 🚀',
-  bio: 'Hi! I am HaierKeys, creator of "Fast Note Sync" and "Custom Image Auto Uploader" for Obsidian. I build high-performance sync pipelines, git automation, and cloud storage integrations for power users. Buying me a coffee directly helps fund relay server hosting (Tokyo/Frankfurt), S3 cloud backups, and open-source maintenance!',
+  bio: 'Hi! I am ZenCoder, creator of "VaultSync Pro" and "Custom Image Auto Uploader" for Obsidian. I build high-performance sync pipelines, git automation, and cloud storage integrations for power users. Buying me a coffee directly helps fund relay server hosting (Tokyo/Frankfurt), S3 cloud backups, and open-source maintenance!',
   location: 'Global / Remote',
-  website: 'https://github.com/haierkeys',
-  githubUrl: 'https://github.com/haierkeys',
-  obsidianPluginUrl: 'https://obsidian.md/plugins?search=fast%20note%20sync',
+  website: 'https://github.com/lengedliu',
+  githubUrl: 'https://github.com/lengedliu',
+  obsidianPluginUrl: 'https://obsidian.md/plugins?search=vault%20sync%20pro',
   discordUrl: 'https://discord.gg/obsidian',
   coffeesCount: 1420,
   supportersCount: 348,
@@ -38,7 +39,7 @@ export const initialSupporters: SupporterMessage[] = [
     isAnonymous: false,
     coffees: 5,
     amount: 15,
-    message: 'Fast Note Sync literally saved my 10,000 note Obsidian vault during my thesis! The conflict resolution auto-merge is wizardry. Thanks for all your hard work!',
+    message: 'VaultSync Pro literally saved my 10,000 note Obsidian vault during my thesis! The conflict resolution auto-merge is wizardry. Thanks for all your hard work!',
     timestamp: '2 hours ago',
     tierName: 'VIP Sync Member',
     isMonthly: true,
@@ -100,7 +101,7 @@ export const initialSupporters: SupporterMessage[] = [
     isAnonymous: false,
     coffees: 3,
     amount: 9,
-    message: 'The new REST API pipeline for Fast Note Sync service is lightning fast. Sending energy your way!',
+    message: 'The new REST API pipeline for VaultSync Pro service is lightning fast. Sending energy your way!',
     timestamp: '5 days ago',
     tierName: 'Vault Explorer',
     isMonthly: true,
@@ -112,7 +113,7 @@ export const initialSupporters: SupporterMessage[] = [
 export const initialShopItems: ShopItem[] = [
   {
     id: 'shop-1',
-    title: 'Fast Note Sync Service - Pro License Key (1 Year)',
+    title: 'VaultSync Pro Service - Pro License Key (1 Year)',
     price: 18,
     originalPrice: 25,
     category: 'License',
@@ -136,7 +137,7 @@ export const initialShopItems: ShopItem[] = [
     originalPrice: 40,
     category: 'Plugin',
     image: 'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=600&q=80',
-    description: 'Complete production-ready Docker Compose & Kubernetes helm charts to run your own private Fast Note Sync server backend on your NAS, VPS, or home server.',
+    description: 'Complete production-ready Docker Compose & Kubernetes helm charts to run your own private VaultSync Pro server backend on your NAS, VPS, or home server.',
     features: [
       'Includes Redis queue + PostgreSQL storage schemas',
       'Web Dashboard for managing synced vaults & tokens',
@@ -220,11 +221,11 @@ export const initialTiers: MembershipTier[] = [
     price: 10,
     billingPeriod: 'month',
     color: '#8B5CF6',
-    description: 'Includes 1x Fast Note Sync Pro Cloud Node activation for high-speed multi-device vault syncing.',
+    description: 'Includes 1x VaultSync Pro Cloud Node activation for high-speed multi-device vault syncing.',
     badgeIcon: '⚡',
     perks: [
       'All Vault Explorer perks',
-      'Free Fast Note Sync Cloud Node subscription included',
+      'Free VaultSync Pro Cloud Node subscription included',
       'Dedicated Tokyo/Frankfurt high-speed sync channel',
       '1-on-1 setup help via Discord DM',
     ],
@@ -251,12 +252,12 @@ export const initialTiers: MembershipTier[] = [
 export const initialDevlogs: DevlogPost[] = [
   {
     id: 'post-1',
-    title: 'Fast Note Sync v2.5.0 Released: Reconstructed Sync Protocol & Pipeline Pipeline ⚡',
-    slug: 'fast-note-sync-v25-released',
+    title: 'VaultSync Pro v2.5.0 Released: Reconstructed Sync Protocol & Pipeline ⚡',
+    slug: 'vault-sync-pro-v25-released',
     publishedAt: '2 days ago',
     category: 'Release',
     summary: 'Major performance overhaul! We reconstructed the synchronization protocol engine from scratch using streaming binary deltas. Sync latency dropped from 850ms to under 120ms.',
-    content: `Hey everyone! Excited to announce that **Fast Note Sync v2.5.0** is officially live for Obsidian users!
+    content: `Hey everyone! Excited to announce that **VaultSync Pro v2.5.0** is officially live for Obsidian users!
 
 ### Key Improvements in v2.5.0:
 
@@ -310,7 +311,7 @@ Try it out in the settings tab under *Compress & Transform*!`,
 
 Total monthly hosting cost is approximately **$400 - $450**. Thanks to our **348 supporters**, we are currently 87% funded for this month's hosting goal!
 
-If you use Fast Note Sync daily, consider grabbing a coffee or joining a monthly tier to help keep our relay nodes blazing fast.`,
+If you use VaultSync Pro daily, consider grabbing a coffee or joining a monthly tier to help keep our relay nodes blazing fast.`,
     likes: 65,
     commentsCount: 21,
     tags: ['Server', 'Infrastructure', 'OpenSource', 'Transparency'],
@@ -320,10 +321,10 @@ If you use Fast Note Sync daily, consider grabbing a coffee or joining a monthly
 export const initialGallery: GalleryItem[] = [
   {
     id: 'gal-1',
-    title: 'Fast Note Sync - Realtime Multi-Device Sync Demo',
+    title: 'VaultSync Pro - Realtime Multi-Device Sync Demo',
     description: 'Instant side-by-side note editing between macOS Obsidian and Android mobile app.',
     imageUrl: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80',
-    category: 'Fast Note Sync',
+    category: 'VaultSync Pro',
   },
   {
     id: 'gal-2',

@@ -173,7 +173,7 @@ export const SupporterFeed: React.FC<SupporterFeedProps> = ({
                   </div>
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-bold text-amber-300">HaierKeys (Creator)</span>
+                      <span className="text-xs font-bold text-amber-300">ZenCoder (Creator)</span>
                       <span className="text-[10px] text-slate-500">{item.creatorReply.timestamp}</span>
                     </div>
                     <p className="text-xs text-slate-300 leading-relaxed">
@@ -189,7 +189,7 @@ export const SupporterFeed: React.FC<SupporterFeedProps> = ({
                         type="text"
                         value={replyInput}
                         onChange={(e) => setReplyInput(e.target.value)}
-                        placeholder="Type reply as HaierKeys..."
+                        placeholder="Type reply as ZenCoder..."
                         className="flex-1 px-3 py-1.5 bg-slate-950 border border-amber-500/40 rounded-xl text-xs text-white focus:outline-none"
                         autoFocus
                       />

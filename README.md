@@ -1,4 +1,4 @@
-# DevFuel - HaierKeys 创作者赞助与打赏平台 ⚡ / Creator Support & Sponsorship Platform
+# DevFuel - ZenCoder 创作者赞助与打赏平台 ⚡ / Creator Support & Sponsorship Platform
 
 [中文说明](#中文说明) | [English](#english)
 
@@ -7,7 +7,7 @@
 <a name="中文说明"></a>
 ## 中文说明
 
-**DevFuel** 是专为 **HaierKeys**（Obsidian 知名插件如 *Fast Note Sync* 和 *Custom Image Auto Uploader* 的开发者）量身定制的高性能创作者赞助与打赏平台。
+**DevFuel** 是专为 **ZenCoder**（Obsidian 知名插件如 *VaultSync Pro* 和 *Custom Image Auto Uploader* 的开发者）量身定制的高性能创作者赞助与打赏平台。
 
 作为 Ko-fi 的现代化高质感重现与升级版，DevFuel 旨在帮助开发者和开源创作者收取单次打赏与按月赞助、销售数字产品（Pro 授权码、Docker 部署包、工作流指南）、管理每月服务器托管目标、发布技术开发日志，并与支持者进行深度互动。
 
@@ -91,7 +91,7 @@ npm run build
 <a name="english"></a>
 ## English
 
-**DevFuel** is a high-performance creator support and sponsorship platform built for **HaierKeys**, developer of popular Obsidian plugins including **Fast Note Sync** and **Custom Image Auto Uploader**.
+**DevFuel** is a high-performance creator support and sponsorship platform built for **ZenCoder**, developer of popular Obsidian plugins including **VaultSync Pro** and **Custom Image Auto Uploader**.
 
 Designed as a modern, feature-rich alternative to Ko-fi, DevFuel empowers developers and open-source creators to receive one-time and monthly support, sell digital products (pro licenses, Docker packages, workflow guides), manage monthly server funding goals, publish technical devlogs, and interact directly with supporters.
 
@@ -180,4 +180,4 @@ npm run build
 
 ## 📄 License
 
-Apache-2.0 © 2026 HaierKeys / DevFuel Engine
+Apache-2.0 © 2026 ZenCoder / DevFuel Engine

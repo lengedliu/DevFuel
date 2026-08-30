@@ -22,7 +22,7 @@ export const GalleryTab: React.FC<GalleryTabProps> = ({ gallery }) => {
               Plugin Showcase & Architecture Gallery
             </h2>
             <p className="text-xs text-slate-400">
-              Screenshots, performance benchmarks, and UI workflows of HaierKeys' Obsidian tools
+              Screenshots, performance benchmarks, and UI workflows of ZenCoder's Obsidian tools
             </p>
           </div>
         </div>

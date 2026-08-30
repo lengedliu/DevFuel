@@ -26,7 +26,7 @@ export const PostsTab: React.FC<PostsTabProps> = ({
   const [postComments, setPostComments] = useState<Record<string, Array<{ name: string; text: string; date: string }>>>({
     'post-1': [
       { name: 'Alex M.', text: 'The delta protocol speedup is insane! Mac to Android sync is under a second now.', date: '1 day ago' },
-      { name: 'Dr. Lin', text: 'Thank you HaierKeys! The AST auto-merge for markdown tables worked smoothly.', date: 'Yesterday' },
+      { name: 'Dr. Lin', text: 'Thank you ZenCoder! The AST auto-merge for markdown tables worked smoothly.', date: 'Yesterday' },
     ],
     'post-2': [
       { name: 'Sophie V.', text: 'Cloudflare R2 preset saved me so much hassle configuring CORS headers!', date: '5 days ago' },
@@ -83,7 +83,7 @@ export const PostsTab: React.FC<PostsTabProps> = ({
               Developer Log & Release Updates
             </h2>
             <p className="text-xs text-slate-400">
-              Technical articles, release notes, and roadmap progress from HaierKeys
+              Technical articles, release notes, and roadmap progress from ZenCoder
             </p>
           </div>
         </div>
@@ -166,7 +166,7 @@ export const PostsTab: React.FC<PostsTabProps> = ({
                       {post.publishedAt}
                     </span>
                     <span>•</span>
-                    <span className="text-amber-400">By HaierKeys</span>
+                    <span className="text-amber-400">By ZenCoder</span>
                   </div>
 
                   <h3 className="text-xl sm:text-2xl font-extrabold text-white leading-tight">

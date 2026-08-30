@@ -80,7 +80,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
             <div className="space-y-1">
               <h3 className="text-xl font-bold text-white">Payment Successful! 🎉</h3>
               <p className="text-xs text-slate-300">
-                Thank you for supporting HaierKeys' development work!
+                Thank you for supporting ZenCoder's development work!
               </p>
             </div>
 
@@ -106,7 +106,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                   </button>
                 </div>
                 <p className="text-[11px] text-slate-400">
-                  Paste this key into Obsidian Settings → Fast Note Sync → Activation.
+                  Paste this key into Obsidian Settings → VaultSync Pro → Activation.
                 </p>
               </div>
             ) : (

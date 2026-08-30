@@ -27,8 +27,12 @@ export default function App() {
   // State with LocalStorage Persistence
   const [profile, setProfile] = useState<CreatorProfile>(() => {
     try {
-      const saved = localStorage.getItem('haierkeys_profile');
-      return saved ? JSON.parse(saved) : initialCreatorProfile;
+      const saved = localStorage.getItem('zencoder_profile_v4');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed.name === 'ZenCoder' && parsed.githubUrl === 'https://github.com/lengedliu') return parsed;
+      }
+      return initialCreatorProfile;
     } catch {
       return initialCreatorProfile;
     }
@@ -36,7 +40,7 @@ export default function App() {
 
   const [goal, setGoal] = useState<CoffeeGoal>(() => {
     try {
-      const saved = localStorage.getItem('haierkeys_goal');
+      const saved = localStorage.getItem('zencoder_goal_v2');
       return saved ? JSON.parse(saved) : initialGoal;
     } catch {
       return initialGoal;
@@ -45,7 +49,7 @@ export default function App() {
 
   const [supporters, setSupporters] = useState<SupporterMessage[]>(() => {
     try {
-      const saved = localStorage.getItem('haierkeys_supporters');
+      const saved = localStorage.getItem('zencoder_supporters_v2');
       return saved ? JSON.parse(saved) : initialSupporters;
     } catch {
       return initialSupporters;
@@ -54,7 +58,7 @@ export default function App() {
 
   const [shopItems, setShopItems] = useState<ShopItem[]>(() => {
     try {
-      const saved = localStorage.getItem('haierkeys_shop');
+      const saved = localStorage.getItem('zencoder_shop_v2');
       return saved ? JSON.parse(saved) : initialShopItems;
     } catch {
       return initialShopItems;
@@ -63,7 +67,7 @@ export default function App() {
 
   const [devlogs, setDevlogs] = useState<DevlogPost[]>(() => {
     try {
-      const saved = localStorage.getItem('haierkeys_devlogs');
+      const saved = localStorage.getItem('zencoder_devlogs_v2');
       return saved ? JSON.parse(saved) : initialDevlogs;
     } catch {
       return initialDevlogs;
@@ -87,25 +91,34 @@ export default function App() {
   const [isShareModalOpen, setIsShareModalOpen] = useState<boolean>(false);
   const [isDashboardModalOpen, setIsDashboardModalOpen] = useState<boolean>(false);
 
+  // Clear stale keys on mount
+  useEffect(() => {
+    localStorage.removeItem('haierkeys_profile');
+    localStorage.removeItem('haierkeys_goal');
+    localStorage.removeItem('haierkeys_supporters');
+    localStorage.removeItem('haierkeys_shop');
+    localStorage.removeItem('haierkeys_devlogs');
+  }, []);
+
   // Save changes to localStorage
   useEffect(() => {
-    localStorage.setItem('haierkeys_profile', JSON.stringify(profile));
+    localStorage.setItem('zencoder_profile_v4', JSON.stringify(profile));
   }, [profile]);
 
   useEffect(() => {
-    localStorage.setItem('haierkeys_goal', JSON.stringify(goal));
+    localStorage.setItem('zencoder_goal_v2', JSON.stringify(goal));
   }, [goal]);
 
   useEffect(() => {
-    localStorage.setItem('haierkeys_supporters', JSON.stringify(supporters));
+    localStorage.setItem('zencoder_supporters_v2', JSON.stringify(supporters));
   }, [supporters]);
 
   useEffect(() => {
-    localStorage.setItem('haierkeys_shop', JSON.stringify(shopItems));
+    localStorage.setItem('zencoder_shop_v2', JSON.stringify(shopItems));
   }, [shopItems]);
 
   useEffect(() => {
-    localStorage.setItem('haierkeys_devlogs', JSON.stringify(devlogs));
+    localStorage.setItem('zencoder_devlogs_v2', JSON.stringify(devlogs));
   }, [devlogs]);
 
   // Handlers
@@ -263,7 +276,7 @@ export default function App() {
             <div className="lg:col-span-7 space-y-6">
               <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-2">
                 <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                  <span>About HaierKeys & Projects</span>
+                  <span>About ZenCoder & Projects</span>
                   <span className="text-xs font-mono text-purple-400 bg-purple-500/20 px-2 py-0.5 rounded-full border border-purple-500/30">
                     Obsidian Ecosystem
                   </span>
@@ -317,12 +330,12 @@ export default function App() {
       {/* Footer */}
       <footer className="mt-16 border-t border-slate-800/80 bg-slate-950 py-8 text-center text-xs text-slate-500 space-y-2">
         <p className="flex items-center justify-center gap-1.5 font-mono">
-          <span>Powered by Ko-fi Engine</span>
+          <span>Powered by DevFuel Engine</span>
           <span>•</span>
-          <span className="text-amber-400 font-bold">HaierKeys Creator Page</span>
+          <span className="text-amber-400 font-bold">ZenCoder Creator Page</span>
         </p>
         <p className="text-[11px] text-slate-600">
-          Fast Note Sync & Custom Image Auto Uploader for Obsidian © 2026. Built with React & Tailwind CSS.
+          VaultSync Pro & Custom Image Auto Uploader for Obsidian © 2026. Built with React & Tailwind CSS.
         </p>
       </footer>
 
