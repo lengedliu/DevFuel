@@ -1,0 +1,6 @@
+{
+  "name": "HaierKeys - Ko-fi Creator Page",
+  "description": "Interactive Ko-fi creator and support page for HaierKeys, developer of Obsidian Fast Note Sync and custom tools.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
