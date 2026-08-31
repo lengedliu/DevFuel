@@ -27,10 +27,10 @@ export default function App() {
   // State with LocalStorage Persistence
   const [profile, setProfile] = useState<CreatorProfile>(() => {
     try {
-      const saved = localStorage.getItem('zencoder_profile_v4');
+      const saved = localStorage.getItem('zencoder_profile_v5');
       if (saved) {
         const parsed = JSON.parse(saved);
-        if (parsed.name === 'ZenCoder' && parsed.githubUrl === 'https://github.com/lengedliu') return parsed;
+        if (parsed.name === 'ZenCoder' && parsed.paypalEmail === 'lychuan_007@163.com') return parsed;
       }
       return initialCreatorProfile;
     } catch {
@@ -102,7 +102,7 @@ export default function App() {
 
   // Save changes to localStorage
   useEffect(() => {
-    localStorage.setItem('zencoder_profile_v4', JSON.stringify(profile));
+    localStorage.setItem('zencoder_profile_v5', JSON.stringify(profile));
   }, [profile]);
 
   useEffect(() => {
@@ -262,7 +262,7 @@ export default function App() {
             <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-20">
               <CoffeeWidget
                 coffeePrice={profile.coffeePrice}
-                paypalHandle={profile.paypalHandle || 'zencoder'}
+                paypalHandle={profile.paypalEmail || profile.paypalHandle || 'lychuan_007@163.com'}
                 onSendCoffee={handleSendCoffee}
               />
 

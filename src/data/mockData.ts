@@ -19,6 +19,8 @@ export const initialCreatorProfile: CreatorProfile = {
   monthlyIncome: 680,
   coffeePrice: 3,
   verified: true,
+  paypalEmail: 'lychuan_007@163.com',
+  paypalHandle: 'lychuan_007@163.com',
 };
 
 export const initialGoal: CoffeeGoal = {

@@ -16,6 +16,8 @@ export interface CreatorProfile {
   monthlyIncome: number;
   coffeePrice: number; // default $3
   verified: boolean;
+  paypalEmail?: string;
+  paypalHandle?: string;
 }
 
 export interface CoffeeGoal {

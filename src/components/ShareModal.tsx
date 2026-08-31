@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { X, Copy, Check, ExternalLink, Twitter, Github, MessageSquare } from 'lucide-react';
 
 interface ShareModalProps {
@@ -15,8 +16,8 @@ export const ShareModal: React.FC<ShareModalProps> = ({ onClose }) => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  return (
-    <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in">
+  return createPortal(
+    <div className="fixed inset-0 z-[100] bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in">
       <div className="relative max-w-sm w-full bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl p-6 space-y-4">
         <button
           onClick={onClose}
@@ -67,6 +68,7 @@ export const ShareModal: React.FC<ShareModalProps> = ({ onClose }) => {
           </a>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
